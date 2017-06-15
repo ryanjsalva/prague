@@ -24,6 +24,7 @@ export default class prague extends Component {
   // button click event handler; go find a funny joke
   handlePress(e) {
    this.setState({joke: '...'})
+   this.trackEvent();
    fetch('https://icanhazdadjoke.com/', { headers: { Accept: 'text/plain' } }).then(r => r.text())
      .then(joke => this.setState({ joke }));
   }
